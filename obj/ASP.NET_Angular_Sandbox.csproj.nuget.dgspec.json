@@ -38,6 +38,12 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.AspNetCore.SpaServices.Extensions": {
+              "target": "Package",
+              "version": "[5.0.0-preview.6.20312.15, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
