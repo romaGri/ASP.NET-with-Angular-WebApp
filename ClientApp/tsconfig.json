@@ -19,9 +19,12 @@
     },
     "files": [
       "src/main.ts",
-      "src/polyfills.ts"
+      "src/polyfills.ts"//,
+      // "src/app/navbar/navbar.component.spec.ts",      
+      // "src/app/sidebar/sidebar.component.spec.ts"
+
     ],
-    "include": [
-      "src/**/*.ts"
-    ]
+  //   "include": [
+  //     "src/**/*.ts"
+  //   ]
   }
