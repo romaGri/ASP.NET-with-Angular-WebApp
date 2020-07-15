@@ -24,7 +24,7 @@ a:hover {
 }
 
 .section-container {
-    padding: 30px;
+    padding: 10px;
 }
 
 .card-theme {
@@ -44,11 +44,15 @@ a:hover {
     background-color: #494F56;
 }
 
+.cards{
+    margin-top: 20px;
+}
+
 .card {
     display: flex;
     flex-direction: column;
 }
 
 .section-container {
-    padding: 30px;
+    padding: 20px;
 }
