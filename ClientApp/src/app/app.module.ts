@@ -10,9 +10,13 @@ import { SectionSalesComponent } from './sections/section-sales/section-sales.co
 import { SectionOrdersComponent } from './sections/section-orders/section-orders.component';
 import { SectionHelthComponent } from './sections/section-helth/section-helth.component';
 import { from } from 'rxjs';
+import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
+import { LineChartComponent } from './charts/line-chart/line-chart.component';
+import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
+import { ChartsModule } from 'ng2-charts';
 @NgModule({
-    imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes)],
-    declarations: [AppComponent, SidebarComponent, NavbarComponent, SectionSalesComponent, SectionOrdersComponent, SectionHelthComponent],
+    imports: [BrowserModule, FormsModule, RouterModule.forRoot(appRoutes), ChartsModule],
+    declarations: [AppComponent, SidebarComponent, NavbarComponent, SectionSalesComponent, SectionOrdersComponent, SectionHelthComponent, BarChartComponent, LineChartComponent, PieChartComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
