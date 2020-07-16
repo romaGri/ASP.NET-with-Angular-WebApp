@@ -22,10 +22,18 @@ export class LineChartComponent implements OnInit {
   lineChartLabels = LINE_CHART_LABELS;
   lineChartOptions: any[] = [
     {
-      responsive: 'true',
-      maintainAspectRatio: 'false'
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        yAxes: {
+          ticks: {
+            beginAtZero: true
+          }
+        }
+      }
     }
   ];
+
   lineChartLegend: 'true';
   lineChartColors: any[] = LINE_CHART_COLORS;
 
