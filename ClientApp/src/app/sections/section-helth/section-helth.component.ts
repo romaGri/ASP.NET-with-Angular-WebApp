@@ -3,10 +3,10 @@ import { Server } from '../../shared/models/server';
 
 
 const SIMPLE_SERVERS_LIST = [
-  { id: 1, name: 'serv name', isEnabled: true },
-  { id: 2, name: 'serv name', isEnabled: false },
-  { id: 3, name: 'serv name', isEnabled: true },
-  { id: 4, name: 'serv name', isEnabled: true },
+  { id: 1, name: 'dev-managmemt', isEnabled: true },
+  { id: 2, name: 'dev-mob', isEnabled: false },
+  { id: 3, name: 'dev-web', isEnabled: true },
+  { id: 4, name: 'dev-db', isEnabled: true },
 ];
 
 @Component({
