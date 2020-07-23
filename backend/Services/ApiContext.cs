@@ -1,0 +1,18 @@
+using Backend.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace Backend.obj.Services
+{
+    public class ApiContext : DbContext
+    {
+        public ApiContext(DbContextOptions<ApiContext> options) : base(options)
+        {
+
+        }
+
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<Customer> Customres { get; set; }
+        public DbSet<Server> Servers { get; set; }
+
+    }
+}
