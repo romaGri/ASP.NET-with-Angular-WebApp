@@ -1,4 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Server } from '../../shared/models/server';
+
+
+const SIMPLE_SERVERS_LIST = [
+  { id: 1, name: 'serv name', isEnabled: true },
+  { id: 2, name: 'serv name', isEnabled: false },
+  { id: 3, name: 'serv name', isEnabled: true },
+  { id: 4, name: 'serv name', isEnabled: true },
+];
 
 @Component({
   selector: 'section-helth',
@@ -8,6 +17,9 @@ import { Component, OnInit } from '@angular/core';
 export class SectionHelthComponent implements OnInit {
 
   constructor() { }
+
+  servers: Server[] = SIMPLE_SERVERS_LIST;
+
 
   ngOnInit(): void {
   }
