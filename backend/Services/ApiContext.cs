@@ -1,9 +1,10 @@
+using Backend.Contracts;
 using Backend.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.obj.Services
 {
-    public class ApiContext : DbContext
+    public class ApiContext : DbContext, IApiContext
     {
         public ApiContext(DbContextOptions<ApiContext> options) : base(options)
         {
