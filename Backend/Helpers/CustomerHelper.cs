@@ -19,7 +19,13 @@ namespace Backend.Helpers
 
         private Random _rand = new Random();
 
-        private string MakeCustomerName()
+        public Customer GetRandomCustomer()
+        {
+            var randomId = _rand.Next(_apiContext.Customres.Count());
+            return _apiContext.Customres.First(customer => customer.Id == randomId);
+        }
+
+        public string MakeCustomerName()
         {
             var prefix = _randomizer.GetRandom(bizPrefix);
             var suffix = _randomizer.GetRandom(bizSuffix);
@@ -27,10 +33,22 @@ namespace Backend.Helpers
             return prefix + suffix;
         }
 
-        public Customer GetRandomCustomer()
+        public string MakeCustomerEmail(string name)
         {
-            var randomId = _rand.Next(_apiContext.Customres.Count());
-            return _apiContext.Customres.First(customer => customer.Id == randomId);
+            return $"contact@{name.ToLower()}_{DateTime.Now:fff}.com";
+        }
+
+        public List<string> getStates()
+        {
+            var states = new List<string>(){
+            "AK", "AL","AZ",  "AR", "CA", "CO", "CT", "DE", "FL", "GA",
+            "HI", "ID", "IL", "IN", "IA", "KS", "KY", "LA", "ME", "MD",
+            "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ",
+            "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC",
+            "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"
+            };
+            
+            return states;
         }
 
         private readonly List<string> bizPrefix = new List<string>()
