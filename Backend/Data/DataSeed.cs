@@ -1,4 +1,5 @@
 using Backend.Contracts;
+using Backend.obj.Services;
 using System.Linq;
 
 namespace Backend.Data
@@ -6,7 +7,6 @@ namespace Backend.Data
     public class DataSeed
     {
         private IApiContext _apiContext;
-
         public DataSeed(IApiContext apiContext)
         {
             _apiContext = apiContext;
@@ -14,14 +14,19 @@ namespace Backend.Data
 
         public void SeedData(int nCustomers, int nOrders, int nservers)
         {
-            if(_apiContext.Customres.Any()){
+            if (_apiContext.Customres.Any())
+            {
+                _apiContext.Save();
+            }
+            
+            if (_apiContext.Orders.Any())
+            {
+                _apiContext.Save();
+            }
 
-            }
-            if(_apiContext.Orders.Any()){
-                
-            }
-            if(_apiContext.Servers.Any()){
-                
+            if (_apiContext.Servers.Any())
+            {
+                _apiContext.Save();
             }
 
         }

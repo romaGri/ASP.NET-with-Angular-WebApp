@@ -7,5 +7,7 @@ namespace Backend.Contracts {
          DbSet<Order> Orders { get; set; }
          DbSet<Customer> Customres { get; set; }
          DbSet<Server> Servers { get; set; }
+
+         void Save();
     }
 }

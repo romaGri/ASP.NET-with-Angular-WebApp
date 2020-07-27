@@ -15,5 +15,9 @@ namespace Backend.obj.Services
         public DbSet<Customer> Customres { get; set; }
         public DbSet<Server> Servers { get; set; }
 
+        public void Save()
+        {
+            this.SaveChanges();
+        }
     }
 }
