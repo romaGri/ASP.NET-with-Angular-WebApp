@@ -9,7 +9,7 @@ namespace Backend.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Customres",
+                name: "Customers",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -20,7 +20,7 @@ namespace Backend.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Customres", x => x.Id);
+                    table.PrimaryKey("PK_Customers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -46,15 +46,15 @@ namespace Backend.Migrations
                     CustomerId = table.Column<int>(type: "integer", nullable: true),
                     Total = table.Column<decimal>(type: "numeric", nullable: false),
                     Placed = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
-                    Completed = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
+                    Completed = table.Column<DateTime>(type: "timestamp without time zone", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Orders_Customres_CustomerId",
+                        name: "FK_Orders_Customers_CustomerId",
                         column: x => x.CustomerId,
-                        principalTable: "Customres",
+                        principalTable: "Customers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -74,7 +74,7 @@ namespace Backend.Migrations
                 name: "Servers");
 
             migrationBuilder.DropTable(
-                name: "Customres");
+                name: "Customers");
         }
     }
 }

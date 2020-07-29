@@ -9,6 +9,13 @@ namespace Backend.Data{
         private IRandomizer _rand;
         private ICustomerHelper _customerHеlper; 
         private IOrderHelper _orderHеlper;
+
+        public ListBuilder(IRandomizer rand, ICustomerHelper customerHеlper, IOrderHelper orderHеlper)
+        {
+            _rand =rand;
+            _customerHеlper = customerHеlper;
+            _orderHеlper = orderHеlper; 
+        }
         public List<Customer> BuildListCustomers(int n)
         {
             var customres = new List<Customer>();

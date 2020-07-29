@@ -37,7 +37,7 @@ namespace Backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customres");
+                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("Backend.Models.Order", b =>
@@ -47,7 +47,7 @@ namespace Backend.Migrations
                         .HasColumnType("integer")
                         .UseIdentityByDefaultColumn();
 
-                    b.Property<DateTime>("Completed")
+                    b.Property<DateTime?>("Completed")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<int?>("CustomerId")

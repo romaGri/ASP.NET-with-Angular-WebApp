@@ -5,7 +5,7 @@ namespace Backend.Helpers
 {
     public class OrderHelper : IOrderHelper
     {
-        private Random _rand;
+        private Random _rand = new Random();
 
         public DateTime? GetRandOrderComplited(DateTime placed)
         {

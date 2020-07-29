@@ -12,17 +12,18 @@ namespace Backend.Helpers
         private readonly IRandomizer _randomizer;
         private readonly IApiContext _apiContext;
 
-        public CustomerHelper(IApiContext apiContext)
+        public CustomerHelper(IApiContext apiContext, IRandomizer randomizer) 
         {
             _apiContext = apiContext;
+            _randomizer = randomizer;
         }
 
         private Random _rand = new Random();
 
         public Customer GetRandomCustomer()
         {
-            var randomId = _rand.Next(_apiContext.Customres.Count());
-            return _apiContext.Customres.First(customer => customer.Id == randomId);
+            var randomId = _rand.Next(_apiContext.Customers.Count());
+            return _apiContext.Customers.First(customer => customer.Id == randomId);
         }
 
         public string MakeCustomerName()
